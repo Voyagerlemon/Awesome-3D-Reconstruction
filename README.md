@@ -18,6 +18,7 @@ A curated list of papers on 3D reconstruction from top venues (CVPR, ICCV, ECCV,
 - [Human Body & Face Reconstruction](#human-body--face-reconstruction)
 - [Large-Scale Scene Reconstruction](#large-scale-scene-reconstruction)
 - [Generative 3D Reconstruction](#generative-3d-reconstruction)
+- [Feed-Forward 3D Reconstruction](#feed-forward-3d-reconstruction)
 
 ---
 
@@ -188,6 +189,17 @@ Each paper entry follows this structure:
 - **Method:** Fine-tunes a diffusion model on synthetic data to generate novel views conditioned on camera pose; lifts to 3D via SDS.
 - **Key Contribution:** Leverages 2D diffusion priors for zero-shot single-image novel view synthesis and 3D reconstruction.
 - **Code:** [cvlab-columbia/zero123](https://github.com/cvlab-columbia/zero123)
+
+---
+
+## Feed-Forward 3D Reconstruction
+
+### [VGGT: Visual Geometry Grounded Transformer](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_VGGT_Visual_Geometry_Grounded_Transformer_CVPR_2025_paper.html)
+- **Venue:** CVPR 2025 (Best Paper)
+- **Problem:** Existing 3D reconstruction methods require per-scene optimization or complex multi-stage pipelines, making them slow and hard to generalize.
+- **Method:** A feed-forward transformer that takes an arbitrary number of images as input and directly regresses all 3D scene attributes (camera poses, depth maps, point maps, 3D points) in a single forward pass.
+- **Key Contribution:** Unified feed-forward architecture for multi-view 3D reconstruction without any test-time optimization; achieves state-of-the-art across multiple 3D tasks simultaneously.
+- **Code:** [facebookresearch/vggt](https://github.com/facebookresearch/vggt)
 
 ---
 
