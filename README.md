@@ -46,6 +46,7 @@ This project adopts the [Conventional Commits](https://www.conventionalcommits.o
 |------|------|------|------|
 | `docs` | 📝 | update doc | `📝 docs: update API documentation` |
 
+---
 
 ## Point Cloud Processing
 
