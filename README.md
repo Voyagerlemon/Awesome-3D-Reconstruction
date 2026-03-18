@@ -2,23 +2,24 @@
 
 A curated list of papers on 3D reconstruction from top venues (CVPR, ICCV, ECCV, NeurIPS, SIGGRAPH, TPAMI, IJCV, etc.).
 
-> Papers are organized by research topic. Each entry includes the problem addressed, proposed method, and key contributions.
+> Papers are organized by research topic and roughly follow the historical development of the field. Each entry includes the problem addressed, proposed method, and key contributions.
 
 ---
 
 ## Table of Contents
 
-- [Neural Implicit Representations](#neural-implicit-representations)
-- [Neural Radiance Fields (NeRF)](#neural-radiance-fields-nerf)
-- [3D Gaussian Splatting](#3d-gaussian-splatting)
-- [Multi-View Stereo (MVS)](#multi-view-stereo-mvs)
-- [Depth Estimation](#depth-estimation)
-- [Point Cloud Processing](#point-cloud-processing)
-- [Dynamic Scene Reconstruction](#dynamic-scene-reconstruction)
-- [Human Body & Face Reconstruction](#human-body--face-reconstruction)
-- [Large-Scale Scene Reconstruction](#large-scale-scene-reconstruction)
-- [Generative 3D Reconstruction](#generative-3d-reconstruction)
-- [Feed-Forward 3D Reconstruction](#feed-forward-3d-reconstruction)
+- [Point Cloud Processing](#point-cloud-processing) ← The starting point for deep learning in 3D processing
+- [Multi-View Stereo (MVS)](#multi-view-stereo-mvs) ← Classic geometry + learning transformation
+- [Depth Estimation](#depth-estimation) ← The foundation of 2D to 3D perception
+- [Neural Implicit Representations](#neural-implicit-representations) ← The revolution of implicit representations
+- [Neural Radiance Fields (NeRF)](#neural-radiance-fields-nerf) ← The pinnacle of rendering with implicit representations
+- [Dynamic Scene Reconstruction](#dynamic-scene-reconstruction) ← Temporal extension of NeRF
+- [Human Body & Face Reconstruction](#human-body--face-reconstruction) ← Parameterized modeling branch
+- [Large-Scale Scene Reconstruction](#large-scale-scene-reconstruction) ← Scale expansion of NeRF
+- [Generative 3D Reconstruction](#generative-3d-reconstruction) ← Involvement of generative models
+- [3D Gaussian Splatting](#3d-gaussian-splatting) ← A new explicit representation paradigm
+- [Hybrid Representations](#hybrid-representations) ← Exploration of explicit and implicit fusion
+- [Feed-Forward 3D Reconstruction](#feed-forward-3d-reconstruction) ← Current frontier: unified end-to-end approach
 
 ---
 
@@ -37,63 +38,23 @@ Each paper entry follows this structure:
 
 ---
 
-## Neural Implicit Representations
+## 📝 Conventional Commits 提交规范
 
-### [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/abs/1812.03828)
-- **Venue:** CVPR 2019
-- **Problem:** Traditional 3D representations (voxels, point clouds, meshes) are limited in resolution or topology flexibility.
-- **Method:** Represents 3D geometry as the decision boundary of a neural network that predicts occupancy probability for any continuous 3D point.
-- **Key Contribution:** First work to use implicit neural functions for 3D reconstruction, enabling arbitrary resolution and topology.
-- **Code:** [autonomousvision/occupancy_networks](https://github.com/autonomousvision/occupancy_networks)
+This project adopts the [Conventional Commits](https://www.conventionalcommits.org/) specification, please use the following format to submit:
 
----
+| Type | Icon | Des | Example |
+|------|------|------|------|
+| `docs` | 📝 `:memo:` | 文档更新 | `📝 docs: update API documentation` |
 
-### [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/abs/1901.05103)
-- **Venue:** CVPR 2019
-- **Problem:** Compact and continuous 3D shape representation that generalizes across shape categories.
-- **Method:** Learns a latent-conditioned SDF via auto-decoder; shape is represented as the zero-level set of the learned function.
-- **Key Contribution:** Auto-decoder framework for shape embedding without an encoder; enables shape completion and interpolation.
-- **Code:** [facebookresearch/DeepSDF](https://github.com/facebookresearch/DeepSDF)
 
----
+## Point Cloud Processing
 
-## Neural Radiance Fields (NeRF)
-
-### [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/abs/2003.08934)
-- **Venue:** ECCV 2020
-- **Problem:** Novel view synthesis from a sparse set of input images.
-- **Method:** Encodes scene as a continuous volumetric radiance field using an MLP; renders via differentiable ray marching.
-- **Key Contribution:** Photorealistic novel view synthesis using purely implicit neural representation.
-- **Code:** [bmild/nerf](https://github.com/bmild/nerf)
-
----
-
-### [Instant-NGP: Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://arxiv.org/abs/2201.05989)
-- **Venue:** SIGGRAPH 2022
-- **Problem:** NeRF training is extremely slow (hours per scene).
-- **Method:** Replaces MLP input with a multiresolution hash grid encoding, drastically reducing network size and training time.
-- **Key Contribution:** Reduces NeRF training from hours to seconds without quality loss.
-- **Code:** [NVlabs/instant-ngp](https://github.com/NVlabs/instant-ngp)
-
----
-
-### [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields](https://arxiv.org/abs/2103.13415)
-- **Venue:** ICCV 2021
-- **Problem:** NeRF produces aliasing artifacts when rendering at different scales/resolutions.
-- **Method:** Casts conical frustums instead of rays and uses integrated positional encoding to represent regions rather than points.
-- **Key Contribution:** Anti-aliased NeRF rendering with improved multi-scale consistency.
-- **Code:** [google/mipnerf](https://github.com/google/mipnerf)
-
----
-
-## 3D Gaussian Splatting
-
-### [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://arxiv.org/abs/2308.04079)
-- **Venue:** SIGGRAPH 2023
-- **Problem:** NeRF-based methods are slow at inference/rendering.
-- **Method:** Represents scenes as a set of 3D Gaussians with learnable attributes; renders via differentiable tile-based rasterization.
-- **Key Contribution:** Real-time (>100 FPS) high-quality novel view synthesis; explicit representation enables fast editing.
-- **Code:** [graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting)
+### [PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](https://arxiv.org/abs/1612.00593)
+- **Venue:** CVPR 2017
+- **Problem:** Deep networks cannot directly process unordered 3D point clouds.
+- **Method:** Applies shared MLPs per point + symmetric aggregation (max pooling) to achieve permutation invariance.
+- **Key Contribution:** First deep learning framework directly operating on raw point clouds; foundational for all subsequent work.
+- **Code:** [charlesq34/pointnet](https://github.com/charlesq34/pointnet)
 
 ---
 
@@ -137,14 +98,52 @@ Each paper entry follows this structure:
 
 ---
 
-## Point Cloud Processing
+## Neural Implicit Representations
 
-### [PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](https://arxiv.org/abs/1612.00593)
-- **Venue:** CVPR 2017
-- **Problem:** Deep networks cannot directly process unordered 3D point clouds.
-- **Method:** Applies shared MLPs per point + symmetric aggregation (max pooling) to achieve permutation invariance.
-- **Key Contribution:** First deep learning framework directly operating on raw point clouds; foundational for all subsequent work.
-- **Code:** [charlesq34/pointnet](https://github.com/charlesq34/pointnet)
+### [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/abs/1812.03828)
+- **Venue:** CVPR 2019
+- **Problem:** Traditional 3D representations (voxels, point clouds, meshes) are limited in resolution or topology flexibility.
+- **Method:** Represents 3D geometry as the decision boundary of a neural network that predicts occupancy probability for any continuous 3D point.
+- **Key Contribution:** First work to use implicit neural functions for 3D reconstruction, enabling arbitrary resolution and topology.
+- **Code:** [autonomousvision/occupancy_networks](https://github.com/autonomousvision/occupancy_networks)
+
+---
+
+### [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/abs/1901.05103)
+- **Venue:** CVPR 2019
+- **Problem:** Compact and continuous 3D shape representation that generalizes across shape categories.
+- **Method:** Learns a latent-conditioned SDF via auto-decoder; shape is represented as the zero-level set of the learned function.
+- **Key Contribution:** Auto-decoder framework for shape embedding without an encoder; enables shape completion and interpolation.
+- **Code:** [facebookresearch/DeepSDF](https://github.com/facebookresearch/DeepSDF)
+
+---
+
+## Neural Radiance Fields (NeRF)
+
+### [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/abs/2003.08934)
+- **Venue:** ECCV 2020
+- **Problem:** Novel view synthesis from a sparse set of input images.
+- **Method:** Encodes scene as a continuous volumetric radiance field using an MLP; renders via differentiable ray marching.
+- **Key Contribution:** Photorealistic novel view synthesis using purely implicit neural representation.
+- **Code:** [bmild/nerf](https://github.com/bmild/nerf)
+
+---
+
+### [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields](https://arxiv.org/abs/2103.13415)
+- **Venue:** ICCV 2021
+- **Problem:** NeRF produces aliasing artifacts when rendering at different scales/resolutions.
+- **Method:** Casts conical frustums instead of rays and uses integrated positional encoding to represent regions rather than points.
+- **Key Contribution:** Anti-aliased NeRF rendering with improved multi-scale consistency.
+- **Code:** [google/mipnerf](https://github.com/google/mipnerf)
+
+---
+
+### [Instant-NGP: Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://arxiv.org/abs/2201.05989)
+- **Venue:** SIGGRAPH 2022
+- **Problem:** NeRF training is extremely slow (hours per scene).
+- **Method:** Replaces MLP input with a multiresolution hash grid encoding, drastically reducing network size and training time.
+- **Key Contribution:** Reduces NeRF training from hours to seconds without quality loss.
+- **Code:** [NVlabs/instant-ngp](https://github.com/NVlabs/instant-ngp)
 
 ---
 
@@ -161,7 +160,7 @@ Each paper entry follows this structure:
 
 ## Human Body & Face Reconstruction
 
-### [SMPL: A Skinned Multi-Person Linear Model](https://dl.acm.org/doi/10.1145/2816795.2818013)  
+### [SMPL: A Skinned Multi-Person Linear Model](https://dl.acm.org/doi/10.1145/2816795.2818013)
 - **Venue:** SIGGRAPH Asia 2015
 - **Problem:** Realistic and controllable parametric human body model.
 - **Method:** Learns a low-dimensional shape + pose parameter space from thousands of registered body scans; deforms via blend skinning.
@@ -189,6 +188,46 @@ Each paper entry follows this structure:
 - **Method:** Fine-tunes a diffusion model on synthetic data to generate novel views conditioned on camera pose; lifts to 3D via SDS.
 - **Key Contribution:** Leverages 2D diffusion priors for zero-shot single-image novel view synthesis and 3D reconstruction.
 - **Code:** [cvlab-columbia/zero123](https://github.com/cvlab-columbia/zero123)
+
+---
+
+## 3D Gaussian Splatting
+
+### [3D Gaussian Splatting for Real-Time Radiance Field Rendering](https://arxiv.org/abs/2308.04079)
+- **Venue:** SIGGRAPH 2023
+- **Problem:** NeRF-based methods are slow at inference/rendering.
+- **Method:** Represents scenes as a set of 3D Gaussians with learnable attributes; renders via differentiable tile-based rasterization.
+- **Key Contribution:** Real-time (>100 FPS) high-quality novel view synthesis; explicit representation enables fast editing.
+- **Code:** [graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting)
+
+---
+
+## Hybrid Representations
+
+### [NeRF Is a Valuable Assistant for 3D Gaussian Splatting](https://openaccess.thecvf.com/content/ICCV2025/html/Fang_NeRF_Is_a_Valuable_Assistant_for_3D_Gaussian_Splatting_ICCV_2025_paper.html)
+- **Venue:** ICCV 2025
+- **Problem:** Although 3DGS is fast, its quality is highly dependent on initialization and lacks spatial perception and correlation between Gauss, resulting in an unsmooth spatial transition.
+- **Method:** It proposes a "joint optimization" framework that enables NeRF to "assist" 3DGS throughout the training process to overcome its inherent flaws.
+- **Key Contribution:** Sharing & Initialization; Residual Vectors; Joint Optimization.
+- **Code:** None.
+
+---
+
+### [HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis](https://arxiv.org/abs/2509.17083)
+- **Venue:** NeurlPS 2025
+- **Problem:** Another fatal weakness of 3DGS is its huge memory overhead. Each Gaussian point needs to store a large number of parameters (48 SH coefficients for color and 7 for shape), resulting in models often taking hundreds of MB or even over GB.
+- **Method:** HyRF (Hybrid Radiation Field) presents an extremely ingenious hybrid representation, perfectly combining the "compactness" of NeRF and the "rapidity" of 3DGS.
+- **Key Contribution:** Hybrid Decomposition; Decoupled Architecture; Background Rendering.
+- **Code:** [wzpscott/hybrid-radiance-fields](https://github.com/wzpscott/hybrid-radiance-fields).
+
+---
+
+### [HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis](https://arxiv.org/abs/2509.17083)
+- **Venue:** NeurlPS 2025
+- **Problem:** Another fatal weakness of 3DGS is its huge memory overhead. Each Gaussian point needs to store a large number of parameters (48 SH coefficients for color and 7 for shape), resulting in models often taking hundreds of MB or even over GB.
+- **Method:** HyRF (Hybrid Radiation Field) presents an extremely ingenious hybrid representation, perfectly combining the "compactness" of NeRF and the "rapidity" of 3DGS.
+- **Key Contribution:** Hybrid Decomposition; Decoupled Architecture; Background Rendering.
+- **Code:** [wzpscott/hybrid-radiance-fields](https://github.com/wzpscott/hybrid-radiance-fields).
 
 ---
 
