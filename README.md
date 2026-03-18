@@ -38,13 +38,13 @@ Each paper entry follows this structure:
 
 ---
 
-## 📝 Conventional Commits 提交规范
+## 📝 Conventional Commits
 
 This project adopts the [Conventional Commits](https://www.conventionalcommits.org/) specification, please use the following format to submit:
 
 | Type | Icon | Des | Example |
 |------|------|------|------|
-| `docs` | 📝 `:memo:` | 文档更新 | `📝 docs: update API documentation` |
+| `docs` | 📝 | update doc | `📝 docs: update API documentation` |
 
 
 ## Point Cloud Processing
