@@ -222,15 +222,6 @@ This project adopts the [Conventional Commits](https://www.conventionalcommits.o
 
 ---
 
-### [HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis](https://arxiv.org/abs/2509.17083)
-- **Venue:** NeurlPS 2025
-- **Problem:** Another fatal weakness of 3DGS is its huge memory overhead. Each Gaussian point needs to store a large number of parameters (48 SH coefficients for color and 7 for shape), resulting in models often taking hundreds of MB or even over GB.
-- **Method:** HyRF (Hybrid Radiation Field) presents an extremely ingenious hybrid representation, perfectly combining the "compactness" of NeRF and the "rapidity" of 3DGS.
-- **Key Contribution:** Hybrid Decomposition; Decoupled Architecture; Background Rendering.
-- **Code:** [wzpscott/hybrid-radiance-fields](https://github.com/wzpscott/hybrid-radiance-fields).
-
----
-
 ## Feed-Forward 3D Reconstruction
 
 ### [VGGT: Visual Geometry Grounded Transformer](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_VGGT_Visual_Geometry_Grounded_Transformer_CVPR_2025_paper.html)
