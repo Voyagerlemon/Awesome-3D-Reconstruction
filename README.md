@@ -21,7 +21,7 @@ A curated list of papers on 3D reconstruction from top venues (CVPR, ICCV, ECCV,
 - [Hybrid Representations](#hybrid-representations) ← Exploration of explicit and implicit fusion
 - [Feed-Forward 3D Reconstruction](#feed-forward-3d-reconstruction) ← Current frontier: unified end-to-end approach
 - [Remote Sensing 3D Reconstruction](#remote-sensing-3d-reconstruction) ← Aerial/satellite/uav imagery meets neural rendering
-- 
+- [3D Reconstruction with CAD](#3d-reconstruction-with-computer-aided-design-cad) 
 ---
 
 ## Format
@@ -270,6 +270,25 @@ This project adopts the [Conventional Commits](https://www.conventionalcommits.o
 - **Method:**  The paper propose ShadowGS, a novel framework based on 3DGS. It leverages a physics-based rendering equation from remote sensing, combined with an efficient ray marching technique, to precisely model geometrically consistent shadows while maintaining efficient rendering. 
 - **Key Contribution:** ShadowGS; Shadow consistency constraint; Shadow map prior.
 - **Code:** Not yet disclosed.
+
+---
+## 3D Reconstruction with Computer-Aided Design (CAD)
+
+### [DeepCAD: A Deep Generative Network for Computer-Aided Design Models](https://openaccess.thecvf.com/content/ICCV2021/papers/Wu_DeepCAD_A_Deep_Generative_Network_for_Computer-Aided_Design_Models_ICCV_2021_paper.pdf)
+- **Venue:** ICCV 2021
+- **Problem:** Point cloud to CAD
+- **Method:** This paper is the **first** 3D generative model for a sequence of computer-aided design (CAD) operations, rather than voxels, point clouds, and polygon meshes, like the previous works did. The network is based on Transformer and CAD operations are treated as natural languages.
+- **Key Contributions:** Transformer-based CAD generator; A publicly available dataset on learning-based CAD designs.
+- **Code:** [rundiwu/DeepCAD](https://github.com/rundiwu/DeepCAD)
+
+
+### [CADCrafter: Generating Computer-Aided Design Models from Unconstrained Images](https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_CADCrafter_Generating_Computer-Aided_Design_Models_from_Unconstrained_Images_CVPR_2025_paper.pdf)
+- **Venue:** CVPR 2025
+- **Problem:** Image to CAD
+- **Method:** The paper propose an image-to-parametric CAD model generation framework that trains solely on synthetic textureless CAD data while testing on real-world images. To impose geometric validity constraints, the direct preference optimization (DPO) is employed to fine-tune our model with the automatic code checker feedback on CAD sequence quality. A real-world dataset is also collected
+- **Key Contribution:** A latent diffusion-based image-to-CAD framework; An automatic code checker; A dataset of unconstrained 3D printed CAD images paired with CAD commands.
+- **Code:** Not yet disclosed.
+
 
 ---
 
