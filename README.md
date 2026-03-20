@@ -282,12 +282,38 @@ This project adopts the [Conventional Commits](https://www.conventionalcommits.o
 - **Code:** [rundiwu/DeepCAD](https://github.com/rundiwu/DeepCAD)
 
 
+### [CADTalk: An Algorithm and Benchmark for Semantic Commenting  of CAD Programs](https://openaccess.thecvf.com/content/CVPR2024/papers/Yuan_CADTalk_An_Algorithm_and_Benchmark_for_Semantic_Commenting_of_CAD_CVPR_2024_paper.pdf)
+- **Venue:** CVPR 2024
+- **Problem:** OpenSCAD Code to Comments
+- **Method:** The paper first introduces the problem of semantic commenting CAD programs, wherein the goal is to segment the input program into code blocks corresponding to semantically meaningful shape parts and assign a semantic label to each block. It solves the problem by combining program parsing with visual-semantic analysis afforded by recent advances in foundational language and vision models.
+- **Key Contribution:** A new task of semantic commenting CAD programs.
+- **Code:** [CADTalk](https://enigma-li.github.io/CADTalk/)
+
+
 ### [CADCrafter: Generating Computer-Aided Design Models from Unconstrained Images](https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_CADCrafter_Generating_Computer-Aided_Design_Models_from_Unconstrained_Images_CVPR_2025_paper.pdf)
 - **Venue:** CVPR 2025
 - **Problem:** Image to CAD
-- **Method:** The paper propose an image-to-parametric CAD model generation framework that trains solely on synthetic textureless CAD data while testing on real-world images. To impose geometric validity constraints, the direct preference optimization (DPO) is employed to fine-tune our model with the automatic code checker feedback on CAD sequence quality. A real-world dataset is also collected
+- **Method:** The paper proposes an image-to-parametric CAD model generation framework that trains solely on synthetic textureless CAD data while testing on real-world images. To impose geometric validity constraints, the direct preference optimization (DPO) is employed to fine-tune our model with the automatic code checker feedback on CAD sequence quality. A real-world dataset is also collected
 - **Key Contribution:** A latent diffusion-based image-to-CAD framework; An automatic code checker; A dataset of unconstrained 3D printed CAD images paired with CAD commands.
 - **Code:** Not yet disclosed.
+
+
+### [CADDreamer: CAD Object Generation from Single-view Images](https://openaccess.thecvf.com/content/CVPR2025/papers/Li_CADDreamer_CAD_Object_Generation_from_Single-view_Images_CVPR_2025_paper.pdf)
+- **Venue:** CVPR 2025
+- **Problem:** Image to CAD
+- **Method:** The paper proposes a novel approach for generating boundary representations (B-rep) of CAD objects from a single image. CADDreamer employs a primitive-aware multi-view diffusion model that captures both local geometric details and high-level structural semantics during the generation process.
+- **Key Contribution:** CADDreamer Framework; Semantic-enhanced Multi-view 2D Diffusion; Geometry Optimization Algorithm; Topology-preserving B-rep Construction.
+- **Code:** Not yet disclosed.
+
+
+## [CAD-Llama: Leveraging Large Language Models for Computer-Aided Design  Parametric 3D Model Generation](https://openaccess.thecvf.com/content/CVPR2025/html/Li_CAD-Llama_Leveraging_Large_Language_Models_for_Computer-Aided_Design_Parametric_3D_CVPR_2025_paper.html)
+- **Venue:** CVPR 2025
+- **Problem:** Text to CAD
+- **Method:** This study investigates the generation of parametric sequences for computer-aided design (CAD) models using LLMs. The paper presents CAD-Llama, a framework designed to enhance pretrained LLMs for generating parametric 3D CAD models.
+- **Key Contributions:** A novel unified framework to generate CAD based on LLMs; A hierarchical annotation pipeline; An adaptive pretraining paradigm.
+- **Code:** Not yet disclosed.
+
+
 
 
 ---
