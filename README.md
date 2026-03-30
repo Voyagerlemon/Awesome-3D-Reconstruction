@@ -262,6 +262,15 @@ This project adopts the [Conventional Commits](https://www.conventionalcommits.o
 
 ---
 
+### [LESS GAUSSIANS, TEXTURE MORE: 4K FEED-FORWARD TEXTURED SPLATTING](https://arxiv.org/abs/2603.25745)
+- **Venue:** LCLR 2026
+- **Problem:** Feed-forward Gaussian splatting methods scale poorly to high-resolution inputs because they tie geometry and appearance to per-pixel primitives, causing the number of Gaussians and computation to explode with image resolution.
+- **Method:** The paper predicts a compact set of textured Gaussian primitives that decouple geometry from appearance by attaching learned texture maps to each primitive.
+- **Key Contribution:** It enables high-resolution, optimization-free feed-forward novel view synthesis with far fewer Gaussians while preserving or improving rendering quality.
+- **Code:** [coming soon](https://yxlao.github.io/lgtm/)
+
+---
+
 ## Remote Sensing 3D Reconstruction
 
 ### [ShadowGS: Shadow-Aware 3D Gaussian Splatting for Satellite Imagery](https://arxiv.org/abs/2601.00939)
