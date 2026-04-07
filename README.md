@@ -22,6 +22,7 @@ A curated list of papers on 3D reconstruction from top venues (CVPR, ICCV, ECCV,
 - [Feed-Forward 3D Reconstruction](#feed-forward-3d-reconstruction) ← Current frontier: unified end-to-end approach
 - [Remote Sensing 3D Reconstruction](#remote-sensing-3d-reconstruction) ← Aerial/satellite/uav imagery meets neural rendering
 - [3D Reconstruction with CAD](#3d-reconstruction-with-computer-aided-design-cad) 
+- [3D Reconstruction with Uncertainty Quantification](#3d-reconstruction-with-uncertainty-quantification)
 ---
 
 ## Format
@@ -315,13 +316,31 @@ This project adopts the [Conventional Commits](https://www.conventionalcommits.o
 - **Code:** Not yet disclosed.
 
 
-## [CAD-Llama: Leveraging Large Language Models for Computer-Aided Design  Parametric 3D Model Generation](https://openaccess.thecvf.com/content/CVPR2025/html/Li_CAD-Llama_Leveraging_Large_Language_Models_for_Computer-Aided_Design_Parametric_3D_CVPR_2025_paper.html)
+### [CAD-Llama: Leveraging Large Language Models for Computer-Aided Design  Parametric 3D Model Generation](https://openaccess.thecvf.com/content/CVPR2025/html/Li_CAD-Llama_Leveraging_Large_Language_Models_for_Computer-Aided_Design_Parametric_3D_CVPR_2025_paper.html)
 - **Venue:** CVPR 2025
 - **Problem:** Text to CAD
 - **Method:** This study investigates the generation of parametric sequences for computer-aided design (CAD) models using LLMs. The paper presents CAD-Llama, a framework designed to enhance pretrained LLMs for generating parametric 3D CAD models.
 - **Key Contributions:** A novel unified framework to generate CAD based on LLMs; A hierarchical annotation pipeline; An adaptive pretraining paradigm.
 - **Code:** Not yet disclosed.
 
+---
+## 3D Reconstruction with Uncertainty Quantification
+
+
+### [Stochastic Neural Radiance Fields: Quantifying Uncertainty in Implicit 3D Representations](https://ieeexplore.ieee.org/document/9665942)
+- **Venue:** 3DV 2021
+- **Problem:** UQ for NVS
+- **Method:** This study proposes a generalization of standard NeRF that learns a probability distribution over all the possible radiance fields modeling the scene. This distribution allows to quantify the uncertainty associated with the scene information provided by the model. Optimization is posed as a **Bayesian learning problem** that is efficiently addressed using the **Variational Inference framework**.
+- **Key Contributions:** First paper to incorporate uncertainty estimation into NeRF, a learning procedure based on Variational Inference
+- **Code:** Not found
+
+
+### [Conditional-Flow NeRF: Accurate 3D Modelling with Reliable Uncertainty Quantification](https://arxiv.org/abs/2203.10192)
+- **Venue:** ECCV 2022
+- **Problem:** UQ for NVS
+- **Method:** This study proposes a novel probabilistic framework to incorporate uncertainty quantification into NeRF-based approaches. In contrast to previous approaches enforcing strong constraints over the radiance field distribution, This method learns it in a flexible and fully data-driven manner by coupling **Latent Variable Modelling** and **Conditional Normalizing Flows**.
+- **Key Contributions:** Modelling Radiance-Density Distributions with Normalizing Flows, Latent Variable Modelling for Radiance Fields Distributions.
+- **Code:** [poetrywanderer/CF-NeRF](https://github.com/poetrywanderer/CF-NeRF?tab=readme-ov-file)
 
 
 
