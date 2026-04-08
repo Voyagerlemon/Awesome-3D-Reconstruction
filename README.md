@@ -331,7 +331,7 @@ This project adopts the [Conventional Commits](https://www.conventionalcommits.o
 - **Venue:** 3DV 2021
 - **Problem:** UQ for NVS
 - **Method:** This study proposes a generalization of standard NeRF that learns a probability distribution over all the possible radiance fields modeling the scene. This distribution allows to quantify the uncertainty associated with the scene information provided by the model. Optimization is posed as a **Bayesian learning problem** that is efficiently addressed using the **Variational Inference framework**.
-- **Key Contributions:** First paper to incorporate uncertainty estimation into NeRF, a learning procedure based on Variational Inference
+- **Key Contributions:** First paper to incorporate uncertainty estimation into NeRF; a learning procedure based on Variational Inference
 - **Code:** Not found
 
 
@@ -339,10 +339,32 @@ This project adopts the [Conventional Commits](https://www.conventionalcommits.o
 - **Venue:** ECCV 2022
 - **Problem:** UQ for NVS
 - **Method:** This study proposes a novel probabilistic framework to incorporate uncertainty quantification into NeRF-based approaches. In contrast to previous approaches enforcing strong constraints over the radiance field distribution, This method learns it in a flexible and fully data-driven manner by coupling **Latent Variable Modelling** and **Conditional Normalizing Flows**.
-- **Key Contributions:** Modelling Radiance-Density Distributions with Normalizing Flows, Latent Variable Modelling for Radiance Fields Distributions.
+- **Key Contributions:** Modelling Radiance-Density Distributions with Normalizing Flows; Latent Variable Modelling for Radiance Fields Distributions.
 - **Code:** [poetrywanderer/CF-NeRF](https://github.com/poetrywanderer/CF-NeRF?tab=readme-ov-file)
 
 
+### [Bayes’ Rays: Uncertainty Quantification for Neural Radiance Fields](https://openaccess.thecvf.com/content/CVPR2024/html/Goli_Bayes_Rays_Uncertainty_Quantification_for_Neural_Radiance_Fields_CVPR_2024_paper.html)
+- **Venue:** CVPR 2024
+- **Problem:** UQ for NVS
+- **Method:** This study proposes a **post-hoc** framework to evaluate uncertainty in any pretrained NeRF without modifying the training process. This method establishes a volumetric uncertainty field using spatial perturbations and a Bayesian Laplace approximation.
+- **Key Contributions:** a plug-and-play probabilistic method to quantify the uncertainty of any pre-trained NeRF.
+- **Code:** [bayesrays](https://bayesrays.github.io/)
+
+
+### [FisherRF: Active View Selection and Uncertainty Quantification for Radiance Fields using Fisher Informations](https://arxiv.org/abs/2311.17874)
+- **Venue:** ECCV 2024
+- **Problem:** UQ for NVS, active view selection
+- **Method:** This study leverages Fisher Information to directly quantify observed information on the parameters of Radiance Fields and select candidate views by maximizing the Expected Information Gain (EIG).
+- **Key Contributions:** A novel formulation to quantify the observed information; An effective and efficient view selection method; An efficient pixel-wise uncertainty quantification and visualization method
+- **Code:** [JiangWenPL/FisherRF](https://github.com/JiangWenPL/FisherRF)
+
+
+### [Modeling Uncertainty for Gaussian Splatting](https://ieeexplore.ieee.org/document/10957826)
+- **Venue:** TNNLS 2025
+- **Problem:** UQ for NVS
+- **Method:** This study introduces a variational inference (VI)-based approach that seamlessly integrates uncertainty prediction into the common rendering pipeline of GS. In addition, it introduces the area under sparsification error (AUSE) as a new term in the loss function, enabling optimization of uncertainty estimation alongside image reconstruction.
+- **Key Contributions:** First work to incorporate UQ to 3DGS; a VI-based approach to learn the parameters of the GS radiance field
+- **Code:** [mezzelfo/stochastic-gaussian-splatting](https://github.com/mezzelfo/stochastic-gaussian-splatting)
 
 ---
 
