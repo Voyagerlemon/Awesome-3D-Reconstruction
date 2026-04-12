@@ -359,12 +359,28 @@ This project adopts the [Conventional Commits](https://www.conventionalcommits.o
 - **Code:** [JiangWenPL/FisherRF](https://github.com/JiangWenPL/FisherRF)
 
 
+### [Variational Multi-Scale Representation for Estimating Uncertainty in 3D Gaussian Splatting](https://openreview.net/forum?id=qpeAtfUWOQ&referrer=%5Bthe%20profile%20of%20Ruiqi%20Li%5D(%2Fprofile%3Fid%3D~Ruiqi_Li7))
+- **Venue:** NeurIPS 2024
+- **Problem:** UQ for NVS
+- **Method:** This paper proposes an uncertainty estimation method built upon the Bayesian inference framework for 3DGS. It develops an offset table technique to draw local multi-scale samples efficiently by offsetting selected attributes and sharing other base attributes. Then, the offset table is learned by variational inference with multi-scale prior. The learned offset posterior can quantify the uncertainty of each individual Gaussian component, and be used in the forward pass to infer the predictive uncertainty.
+- **Key Contributions:** A multi-scale variational inference framework for UQ for 3DGS; A spawning strategy to create multi-scale representations for 3DGS
+- **Code:** [csrqli/variational-3dgs](https://github.com/csrqli/variational-3dgs)
+
+
 ### [Modeling Uncertainty for Gaussian Splatting](https://ieeexplore.ieee.org/document/10957826)
 - **Venue:** TNNLS 2025
 - **Problem:** UQ for NVS
 - **Method:** This study introduces a variational inference (VI)-based approach that seamlessly integrates uncertainty prediction into the common rendering pipeline of GS. In addition, it introduces the area under sparsification error (AUSE) as a new term in the loss function, enabling optimization of uncertainty estimation alongside image reconstruction.
-- **Key Contributions:** First work to incorporate UQ to 3DGS; a VI-based approach to learn the parameters of the GS radiance field
+- **Key Contributions:** A VI-based approach to learn the parameters of the GS radiance field
 - **Code:** [mezzelfo/stochastic-gaussian-splatting](https://github.com/mezzelfo/stochastic-gaussian-splatting)
+
+
+### [PUP 3D-GS: Principled Uncertainty Pruning  for 3D Gaussian Splatting](https://openaccess.thecvf.com/content/CVPR2025/papers/Hanson_PUP_3D-GS_Principled_Uncertainty_Pruning_for_3D_Gaussian_Splatting_CVPR_2025_paper.pdf)
+- **Venue:** CVPR 2025
+- **Problem:** GS pruning
+- **Method:** This paper proposes a principled sensitivity pruning score that preserves visual fidelity and foreground details at significantly higher compression ratios than existing approaches. This score is based on the second-order approximation of the reconstruction error on the training views with respect to the spatial parameters of each Gaussian.
+- **Key Contributions:** A post-hoc pruning technique; A novel spatial sensitivity score; A multi-round prune-refine approach
+- **Code:** [pup3dgs](https://pup3dgs.github.io/)
 
 ---
 
